@@ -19,7 +19,7 @@ body {
 </head>
 <body>
 	<br>
-	<div>${login_message}</div>
+	
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
@@ -40,22 +40,21 @@ body {
 							<div class="col-lg-12">
 								<form id="login-form" action="" method="post" role="form"
 									style="display: block;">
-									<div class="form-group" style="padding-bottom: 1px;">
+									<div class="form-group" ${error != null ? 'has-error' : ''} style="padding-bottom: 1px;">
 										<!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>-->
 										<!-- Bootstrap glyphicons don't work, TODO check -->
+										<span>${logout_message}</span>
 										<img src="bootstrap/img/avatar.png" style="width: 20px;">
 
 										<input type="text" name="username" id="username" tabindex="1"
 											class="form-control" placeholder="Username" value="">
-									</div>
-									<div class="form-group" style="padding-bottom: 1px;">
+										<br>
 										<img src="bootstrap/img/padlock.png" style="width: 20px;">
 										<!-- <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> -->
 										<input type="password" name="password" id="password"
 											tabindex="2" class="form-control" placeholder="Password">
-									</div>
-									<div class="form-group text-center"
-										style="padding-bottom: 1px;">
+										<span>${error}</span>
+										<br>
 										<input type="checkbox" tabindex="3" class="" name="remember"
 											id="remember"> <label for="remember">
 											Remember Me</label>
