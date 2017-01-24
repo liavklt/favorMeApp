@@ -31,6 +31,7 @@ public class UserDAO {
 				User user = new User();
 				user.setId(rs.getInt("id"));
 				user.setUsername(rs.getString("username"));
+				user.setEmail(rs.getString("email"));
 				user.setPassword(rs.getString("password"));
 
 				return user;
@@ -43,7 +44,7 @@ public class UserDAO {
 	public boolean create(User user) {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(user);
 
-		return jdbc.update("insert into user (username,password) values (:username, :password)", params) == 1;
+		return jdbc.update("insert into user (username,email,password) values (:username,:email, :password)", params) == 1;
 
 	}
 
@@ -60,6 +61,7 @@ public class UserDAO {
 
 						user.setId(rs.getInt("id"));
 						user.setUsername(rs.getString("username"));
+						user.setEmail(rs.getString("email"));
 						user.setPassword(rs.getString("password"));
 						
 

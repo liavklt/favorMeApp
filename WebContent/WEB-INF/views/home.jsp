@@ -39,6 +39,10 @@ body {
 								<a href="${contextPath}/register"
 									id="register-form-link">Register</a>
 							</div>
+							<div class="col-sm-6">
+								<a href="${contextPath}/createfavor"
+									id="register-form-link">Add a new favor</a>
+							</div>
 						</div>
 						<hr>
 					</div>

@@ -10,7 +10,7 @@
 
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<title>FavorMeApp</title>
+<title>Register</title>
 <style type="text/css">
 body {
 	background-image: url('${contextPath}/resources/img/Background-Image-10.jpg');
@@ -46,20 +46,20 @@ body {
 											class="form-control" placeholder="Username" value=""/><br/><sf:errors path="username" cssClass="error"></sf:errors>
 											
 									</div>
-									<%-- <div class="form-group">
+									 <div class="form-group">
 										<img src="<c:url value="/resources/img/envelope.png" />" style="width: 20px;">
 										<sf:input type="email" path="email" name="email" id="email"	tabindex="2" class="form-control" placeholder="Email"/><br/><sf:errors path="email" cssClass="error"></sf:errors>
-									</div>--%>
+									</div>
 									<div class="form-group">
 										<img src="<c:url value="/resources/img/padlock.png" />" style="width: 20px;">
 										<sf:input type="password" path="password" name="password" id="password"
 											tabindex="2" class="form-control" placeholder="Password"/><br/><sf:errors path="password" cssClass="error"></sf:errors>
 									</div>
-									<%-- <div class="form-group">
+									<div class="form-group">
 										<img src="<c:url value="/resources/img/padlock.png" />" style="width: 20px;">
-										<sf:input type="confirmpassword" path="confirmpassword" name="confirmpassword" id="confirmpassword"
-											tabindex="2" class="form-control" placeholder="Confirm Password"/><br/><sf:errors path="confirmpassword" cssClass="error"></sf:errors>
-									</div>--%>
+										<input type="password"  name="confirmpassword" id="confirmpassword"
+											tabindex="2" class="form-control" placeholder="Confirm Password"/><br/>
+									</div>
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">

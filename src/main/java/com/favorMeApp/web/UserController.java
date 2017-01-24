@@ -11,13 +11,16 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.favorMeApp.model.Favor;
 import com.favorMeApp.model.User;
+import com.favorMeApp.service.FavorService;
 import com.favorMeApp.service.UserService;
 
 @Controller
 public class UserController {
 
 	private UserService userService;
+	private FavorService favorService;
 
 	@Autowired
 	public void setUserService(UserService userService) {
@@ -26,38 +29,22 @@ public class UserController {
 
 	@RequestMapping("/users")
 	public String showUsers(Model model) {
-		// userService.throwTestException();
+
 		List<User> users = userService.getCurrent();
 		model.addAttribute("users", users);
 		return "users";
 	}
 
-	@RequestMapping("/register")
+	@RequestMapping("/createfavor")
 	public String register(Model model) {
-		model.addAttribute("user", new User());
-		return "register";
+		model.addAttribute("favor", new Favor());
+		return "createfavor";
 	}
 
-	@RequestMapping("/login")
-	public String login() {
-		return "login";
-	}
-
-	@RequestMapping("/welcome")
-	public String welcome() {
-		return "welcome";
-	}
-	
-	@RequestMapping(value = "/doregister", method = RequestMethod.POST)
-	public String doRegister(Model model, @Valid User user, BindingResult result) {
-
-		if (result.hasErrors()) {
-
-			return "register";
-		}
-
-		userService.create(user);
-		return "usercreated";
+	@RequestMapping(value = "/docreatefavor", method = RequestMethod.POST)
+	public String doCreate(Model model, @Valid Favor favor) {
+		favorService.create(favor);
+		return "favorcreated";
 	}
 
 }
