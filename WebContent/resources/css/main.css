@@ -6,6 +6,12 @@ body {
     text-align:center;
     }
     
+.error {
+	font-size: small;
+	color: red;
+	
+	
+}    
 .input-group-addon {
             border-right: 0;
             /*color: #b3b3b3;*/

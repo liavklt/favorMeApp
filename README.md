@@ -1,4 +1,6 @@
 FavorMeApp README file
 
-Welcome, login, signup pages.
-For now, no database is linked. 
+Home, login, register pages.
+Using MySQL.
+
+Coming soon: Working Login Page...
