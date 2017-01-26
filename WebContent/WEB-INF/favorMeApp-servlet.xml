@@ -22,4 +22,8 @@
 
 	
 	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+	<property name="basename" value="com.favorMeApp.messages.messages"></property>
+	</bean>
 </beans>

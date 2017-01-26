@@ -1,17 +1,13 @@
 package com.favorMeApp.model;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
-
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 
 @Component("userDao")
@@ -23,53 +19,20 @@ public class UserDAO {
 		this.jdbc = new NamedParameterJdbcTemplate(jdbc);
 	}
 
-	public List<User> getUsers() {
-		return jdbc.query("select * from user", new RowMapper<User>() {
-
-			@Override
-			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
-				User user = new User();
-				user.setId(rs.getInt("id"));
-				user.setUsername(rs.getString("username"));
-				user.setEmail(rs.getString("email"));
-				user.setPassword(rs.getString("password"));
-
-				return user;
-			}
-
-		});
-
-	}
-
+	
+	@Transactional
 	public boolean create(User user) {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(user);
-
-		return jdbc.update("insert into user (username,email,password) values (:username,:email, :password)", params) == 1;
+		jdbc.update("insert into users (username,email,password,enabled) values (:username,:email, :password, :enabled)", params);
+		return jdbc.update("insert into authorities (username,authority) values (:username,:authority)", params) == 1;
 
 	}
 
-	public User getUser(int id) {
-		MapSqlParameterSource params = new MapSqlParameterSource();
-		params.addValue("id", id);
 
-		return jdbc.queryForObject("select * from user where id=:id", params,
-				new RowMapper<User>() {
-
-					public User mapRow(ResultSet rs, int rowNum)
-							throws SQLException {
-						User user = new User();
-
-						user.setId(rs.getInt("id"));
-						user.setUsername(rs.getString("username"));
-						user.setEmail(rs.getString("email"));
-						user.setPassword(rs.getString("password"));
-						
-
-						return user;
-					}
-
-				});
-		
+	public boolean exists(String username) {
+		return jdbc.queryForObject("select count(*) from users where username=:username", new MapSqlParameterSource("username",username),Integer.class)>0;
 	}
+
+	
 
 }

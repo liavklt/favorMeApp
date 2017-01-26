@@ -21,8 +21,8 @@ public class FavorService {
 		return favorDao.getFavors();
 	}
 
-	public void create(Favor user) {
-		favorDao.create(user);
+	public void create(Favor favor) {
+		favorDao.create(favor);
 
 	}
 

@@ -2,6 +2,9 @@ package com.favorMeApp.web;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,7 +16,13 @@ import com.favorMeApp.service.UserService;
 
 @Controller
 public class LoginController {
+
 	private UserService userService;
+
+	@Autowired
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
 
 	@RequestMapping("/login")
 	public String showlogin() {
@@ -32,14 +41,23 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/doregister", method = RequestMethod.POST)
-	public String doRegister(Model model, @Valid User user, BindingResult result) {
+	public String doRegister(@Valid User user, BindingResult result) {
 
 		if (result.hasErrors()) {
 
 			return "register";
 		}
+		user.setEnabled(true);
+		user.setAuthority("user");
+
+		if (userService.exists(user.getUsername())) {
+
+			result.rejectValue("username", "DuplicateKey.user.username");
+			return "register";
+		}
 
 		userService.create(user);
+
 		return "usercreated";
 	}
 }

@@ -52,7 +52,7 @@ public class FavorDAO {
 		params.addValue("id", id);
 
 		return jdbc.queryForObject("select * from favor where id=:id", params, new RowMapper<Favor>() {
-			
+
 			public Favor mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Favor favor = new Favor();
 

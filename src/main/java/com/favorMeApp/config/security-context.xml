@@ -22,12 +22,13 @@
 			access="isAuthenticated()" />
 		<security:intercept-url pattern="/favorcreated"
 			access="isAuthenticated()" />
-		<security:intercept-url pattern="/" access="permitAll" />
 
-		<security:intercept-url pattern="/register"
-			access="permitAll" />
+		<security:intercept-url pattern="/" access="permitAll" />
 		<security:intercept-url pattern="/doregister"
 			access="permitAll" />
+		<security:intercept-url pattern="/register"
+			access="permitAll" />
+
 		<security:intercept-url pattern="/usercreated"
 			access="permitAll" />
 		<security:intercept-url pattern="/resources/**"
@@ -36,7 +37,8 @@
 			access="permitAll" />
 		<security:intercept-url pattern="/**" access="permitAll" />
 		<security:form-login login-page="/login"
-			authentication-failure-url="/login?error=true" />
+			authentication-failure-url="/login?error=true" login-processing-url="/j_spring_security_check"
+			username-parameter="username" password-parameter="password" />
 		<security:csrf />
 
 	</security:http>

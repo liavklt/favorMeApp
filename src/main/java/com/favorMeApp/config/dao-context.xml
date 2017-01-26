@@ -10,8 +10,8 @@
 
 
 	 <jee:jndi-lookup jndi-name="jdbc/favor" id="dataSource"
-		expected-type="javax.sql.DataSource">
-	</jee:jndi-lookup> 
-	<context:annotation-config></context:annotation-config>
+	 	expected-type="javax.sql.DataSource">
+	</jee:jndi-lookup>
+	 <context:annotation-config></context:annotation-config>
 	<context:component-scan base-package="com.favorMeApp.model"></context:component-scan>
 </beans>

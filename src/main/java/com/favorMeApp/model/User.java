@@ -1,19 +1,48 @@
 package com.favorMeApp.model;
 
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 
 public class User {
 	private int id;
 
-	@Size(min = 5, max = 100, message = "Username must be between 5 and 100 chars.")
+	@NotBlank
+	@Size(min = 5, max = 15)
+	@Pattern(regexp="^\\w{5,}$")
 	private String username;
+
+	@Email
 	private String email;
-	@Size(min = 6, max = 10, message = "Password must be between 6 and 10 chars.")
+
+	@NotBlank
+	@Size(min = 6, max = 15)
+	@Pattern(regexp = "^\\S+$")
 	private String password;
-	
+
+	private boolean enabled;
+	private String authority;
+
+	public String getAuthority() {
+		return authority;
+	}
+
+	public void setAuthority(String authority) {
+		this.authority = authority;
+	}
+
+	public boolean getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 
 	public User() {
-		//empty constructor
+		// empty constructor
 	}
 
 	public User(String username, String email, String password) {
@@ -24,7 +53,7 @@ public class User {
 	}
 
 	public User(int id, String username, String email, String password) {
-		
+
 		this.id = id;
 		this.username = username;
 		this.email = email;
@@ -65,7 +94,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", email=" + email +", password=" + password + "]";
+		return "User [id=" + id + ", username=" + username + ", email=" + email + ", password=" + password + "]";
 	}
 
 }

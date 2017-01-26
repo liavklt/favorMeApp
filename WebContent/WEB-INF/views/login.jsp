@@ -23,7 +23,7 @@ body {
 }
 </style>
 </head>
-<body onload='document.f.j_username.focus();'>
+<body onload='document.f.username.focus();'>
 	<br>
 	<c:if test="${param.error != null }">
 		<span class="error">Login failed. Check that your username
@@ -50,20 +50,20 @@ body {
 						<div class="row">
 							<div class="col-lg-12">
 								<form name='f'
-									action="<c:url value="/login"/>"
-									method="POST" style="display: block;">
+									action="<c:url value="/j_spring_security_check"></c:url>"
+									method="POST" style="display: block;" role="form">
 									<div class="form-group" style="padding-bottom: 1px;">
 
 
 										<img src="<c:url value="/resources/img/avatar.png"/>"
 											style="width: 20px;"> <input type="text"
-											name="j_username" id="j_username" tabindex="1"
+											name="username" id="username" tabindex="1"
 											class="form-control" placeholder="Username" />
 										<br> <img
 											src="<c:url value="/resources/img/padlock.png"/>"
 											style="width: 20px;">
 										<!-- <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> -->
-										<input type="password" name="j_password" id="j_password"
+										<input type="password" name="password" id="password"
 											tabindex="2" class="form-control" placeholder="Password"/>
 
 										<br> 

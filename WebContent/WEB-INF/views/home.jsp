@@ -32,7 +32,7 @@ body {
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-sm-6">
-								<a href="${contextPath}/login"
+								<a href="${contextPath}/welcome"
 									id="login-form-link">Login</a>
 							</div>
 							<div class="col-sm-6">
