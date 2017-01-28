@@ -1,5 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <html>
 <head>
 <link href=€
@@ -32,17 +32,12 @@ body {
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-sm-6">
-								<a href="${contextPath}/welcome"
-									id="login-form-link">Login</a>
+								<a href="${contextPath}/welcome" id="login-form-link">Log in</a>
 							</div>
 							<div class="col-sm-6">
-								<a href="${contextPath}/register"
-									id="register-form-link">Register</a>
+								<a href="${contextPath}/register" id="register-form-link">Register</a>
 							</div>
-							<div class="col-sm-6">
-								<a href="${contextPath}/createfavor"
-									id="register-form-link">Add a new favor</a>
-							</div>
+
 						</div>
 						<hr>
 					</div>

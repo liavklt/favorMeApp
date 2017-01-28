@@ -35,11 +35,15 @@
 			access="permitAll" />
 		<security:intercept-url pattern="/login"
 			access="permitAll" />
-		<security:intercept-url pattern="/**" access="permitAll" />
+		<security:intercept-url pattern="/logout"
+			access="permitAll" />	
+		<security:intercept-url pattern="/***" access="denyAll" />
 		<security:form-login login-page="/login"
 			authentication-failure-url="/login?error=true" login-processing-url="/j_spring_security_check"
 			username-parameter="username" password-parameter="password" />
 		<security:csrf />
 
+		<security:logout logout-success-url="/logout"
+			invalidate-session="true" logout-url="/logout" />
 	</security:http>
 </beans>
