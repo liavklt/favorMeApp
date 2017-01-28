@@ -13,6 +13,45 @@
 
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+	function onLoad() {
+		$("#password").keyup(checkPasswordsMatch);
+		$("#confirmpassword").keyup(checkPasswordsMatch);
+		$("#register-form").submit(canSubmit);
+	}
+	
+	function canSubmit(){
+		var password = $("#password").val();
+		var confirmpassword = $("#confirmpassword").val();
+		if(password!=confirmpassword){
+			alert("Passwords do not match!");
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+
+	function checkPasswordsMatch() {
+		var password = $("#password").val();
+		var confirmpassword = $("#confirmpassword").val();
+
+		if (password.length > 3 || confirmpassword.length > 3) {
+
+			if (password == confirmpassword) {
+				$("#matchpass").text("Passwords match.");
+				$("#matchpass").addClass("valid");
+				$("#matchpass").removeClass("error");
+			} else {
+				$("#matchpass").text("Passwords do not match.");
+				$("#matchpass").addClass("error");
+				$("#matchpass").removeClass("valid");
+			}
+		}
+	}
+	$(document).ready(onLoad);
+</script>
 <title>Register</title>
 <style type="text/css">
 body {
@@ -82,7 +121,8 @@ body {
 										<img src="<c:url value="/resources/img/padlock.png" />"
 											style="width: 20px;"> <input type="text"
 											name="confirmpassword" id="confirmpassword" tabindex="2"
-											class="form-control" placeholder="Confirm Password" /><br />
+											class="form-control" placeholder="Confirm Password" />
+										<div id="matchpass"></div>
 									</div>
 									<div class="form-group">
 										<div class="row">

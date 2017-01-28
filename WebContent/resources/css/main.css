@@ -13,6 +13,11 @@ body {
 	
 }    
 
+.valid {
+	font-size: small;
+	color: green;
+	
+}
 
 .input-group-addon {
             border-right: 0;
