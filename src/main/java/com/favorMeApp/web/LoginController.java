@@ -1,5 +1,7 @@
 package com.favorMeApp.web;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +29,14 @@ public class LoginController {
 	public String showlogin() {
 		return "login";
 	}
-	
+
+	@RequestMapping("/admin")
+	public String showAdmin(Model model) {
+		List<User> users = userService.getAllUsers();
+		model.addAttribute("users", users);
+		return "admin";
+	}
+
 	@RequestMapping("/logout")
 	public String showlogout() {
 		return "logout";

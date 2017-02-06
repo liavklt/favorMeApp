@@ -6,11 +6,11 @@
 <html>
 <head>
 <link href="${contextPath}/resources/css/bootstrap.css"
-	rel="€stylesheet" type="text/css" € />
+	rel="stylesheet" type="text/css"  />
 <link rel="stylesheet" type="text/css"
 	href="${contextPath}/resources/css/main.css" />
-<script type="€text/javascript"
-	€ src="€${contextPath}/resources/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+	 src="${contextPath}/resources/js/bootstrap.min.js"></script>
 
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
