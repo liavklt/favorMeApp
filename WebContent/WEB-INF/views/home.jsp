@@ -52,7 +52,7 @@ body {
 										name="${_csrf.parameterName}" value="${_csrf.token}" />
 								</form>
 							</sec:authorize>
-							<sec:authorize access="hasAuthority('admin')">
+							<sec:authorize access="hasAuthority('ROLE_ADMIN')">
 								<a href="${contextPath}/admin" id="register-form-link">Admin</a>
 							</sec:authorize>
 						</div>
