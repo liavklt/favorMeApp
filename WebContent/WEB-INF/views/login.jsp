@@ -69,9 +69,9 @@ body {
 										<br> 
 										<input type="hidden" name="${_csrf.parameterName}"
 										value="${_csrf.token}" /> 
-										<!-- <input type="checkbox" tabindex="3" class=""
-											name="remember" id="remember"/> <label for="remember">
-											Remember Me</label> -->
+										<input type="checkbox" tabindex="3" class=""
+											name="remember-me"  id="remember"/> <label for="remember">
+											Remember Me</label> 
 									</div>
 									<div class="form-group">
 										<div class="row">

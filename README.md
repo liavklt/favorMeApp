@@ -10,7 +10,6 @@ It is based on the following technologies:
 - Maven 3.3.9
 
 Functionalities that are coming soon :
-- Remember Me functionality
 - Encrypted Passwords
 - Roles
 - Updated db.sql code
