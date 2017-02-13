@@ -120,7 +120,7 @@ body {
 									</div>
 									<div class="form-group">
 										<img src="<c:url value="/resources/img/padlock.png" />"
-											style="width: 20px;"> <input type="text"
+											style="width: 20px;"> <input type="password"
 											name="confirmpassword" id="confirmpassword" tabindex="2"
 											class="form-control" placeholder="Confirm Password" />
 										<div id="matchpass"></div>
