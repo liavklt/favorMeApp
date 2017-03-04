@@ -8,6 +8,7 @@ It is based on the following technologies:
 - JDK 1.8.0_65
 - Tomcat 8.5.5
 - Maven 3.3.9
+- Apache Tiles 3.0.7
 
 Functionalities that are coming soon :
 - Roles

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="favormeapp.base" template="/WEB-INF/templates/default.jsp">
+		<put-attribute name="includes" value=""></put-attribute>
+		<put-attribute name="title" value="FavorMeApp Homepage"></put-attribute>
+		<put-attribute name="header" value="/WEB-INF/tiles/header.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/content.jsp"></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp"></put-attribute>
+	</definition>
+	<definition name="home" extends="favormeapp.base">
+		<put-attribute name="title" value="FavorMeApp Homepage"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/home.jsp"></put-attribute>
+	</definition>
+	<definition name="login" extends="favormeapp.base">
+		<put-attribute name="title" value="FavorMeApp Login Page"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/login.jsp"></put-attribute>
+	</definition>
+	<definition name="logout" extends="favormeapp.base">
+		<put-attribute name="title" value="FavorMeApp Logout Page"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/logout.jsp"></put-attribute>
+	</definition>
+	<definition name="welcome" extends="favormeapp.base">
+		<put-attribute name="title" value="FavorMeApp Welcome Page"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/welcome.jsp"></put-attribute>
+	</definition>
+	<definition name="register" extends="favormeapp.base">
+		<put-attribute name="includes" value="/WEB-INF/tiles/registerscript.jsp"></put-attribute>
+		<put-attribute name="title" value="FavorMeApp Register Page"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/register.jsp"></put-attribute>
+	</definition>
+	<definition name="usercreated" extends="favormeapp.base">
+		<put-attribute name="title" value="Registration successful!"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/usercreated.jsp"></put-attribute>
+	</definition>
+	<definition name="admin" extends="favormeapp.base">
+		<put-attribute name="title" value="FavorMeApp Admin Page"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/admin.jsp"></put-attribute>
+	</definition>
+	<definition name="createfavor" extends="favormeapp.base">
+		<put-attribute name="title" value="Do you have a new favor?"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/createfavor.jsp"></put-attribute>
+	</definition>
+	<definition name="favorcreated" extends="favormeapp.base">
+		<put-attribute name="title" value="Favor Created!"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/favorcreated.jsp"></put-attribute>
+	</definition>
+	<definition name="denied" extends="favormeapp.base">
+		<put-attribute name="title" value="Access Denied!"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/denied.jsp"></put-attribute>
+	</definition>
+	<definition name="error" extends="favormeapp.base">
+		<put-attribute name="title" value="Something is wrong..."></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/tiles/error.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>       
