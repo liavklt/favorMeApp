@@ -2,45 +2,45 @@ package com.favorMeApp.model;
 
 public class Favor {
 	private int id;
-	private String name;
+
 	private String text;
-	
-	
+	private User user;
+
 	public Favor() {
-		//empty constructor
+		// empty constructor
 	}
-	public Favor(String name, String text) {
-		
-		this.name = name;
+
+	public Favor(String text) {
+
 		this.text = text;
 	}
-	public Favor(int id, String name, String text) {
-		
+
+	public Favor(int id, String text) {
+
 		this.id = id;
-		this.name = name;
+
 		this.text = text;
 	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+
 	public String getText() {
 		return text;
 	}
+
 	public void setText(String text) {
 		this.text = text;
 	}
+
 	@Override
 	public String toString() {
-		return "Favor [id=" + id + ", name=" + name + ", text=" + text + "]";
+		return "Favor [id=" + id + "," + "text=" + text + "]";
 	}
-	
+
 }
